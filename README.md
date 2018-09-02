@@ -5,18 +5,15 @@ for the system. It can be a simple counter, or a complex "collector", reading
 sensors from embeded systems or collecting data from foreign (web-)services.
 
 ## Installation
-(Not yet released as a hex package)
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
+The package is [available in Hex](https://hex.pm/packages/data_source), the package can be installed
 by adding `data_source` to your list of dependencies in `mix.exs`:
 
-```elixir
-def deps do
-  [
-    {:data_source, "~> 0.1.0"}
-  ]
-end
-```
+      def deps do
+        [
+          {:data_source, "~> 0.1.0"}
+        ]
+      end
 
 ## Example
 
@@ -52,5 +49,10 @@ Because the consumer delays for 10ms and we have 1 consumer only,
 in 100ms we can expect about 10 events. To process more than 10
 events you can increase the number of consumers.
     
+## Datasources
+
+Some Datasources are defined in `lin/data_source`. Such as
+`Datasource.Counter`, `Datasource.File`, and more.
+
 
 [PocketData]: https://github.com/iboard/pocketdata
