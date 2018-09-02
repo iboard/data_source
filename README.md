@@ -18,4 +18,39 @@ def deps do
 end
 ```
 
+## Example
+
+      # Rememnber consumed events in state
+      defmodule ConsumerSpy do
+        use GenStage
+
+        def start_link(), do: GenStage.start_link(ConsumerSpy, [])
+        def init(state), do: {:consumer, state}
+
+        def handle_events(events, _from, state) do
+          # Simulate load
+          Process.sleep(10)
+          {:noreply, [], [events | state]}
+        end
+
+        def handle_call(:get, _from, state) do
+          {:reply, Enum.flat_map(state, & &1), [], state}
+        end
+      end
+
+      {:ok, datasource} = Datasource.start_link( 0, fn(state) -> { state, state + 1 } end)
+      {:ok, producer} = Datasource.DataStage.start_link(datasource)
+      {:ok, consumer} = ConsumerSpy.start_link()
+
+      GenStage.sync_subscribe(consumer, to: producer, max_demand: 1)
+      Process.sleep(100)
+
+      ConsumerSpy.call(consumer, :get)
+      # => [0,1,2,3,...10]
+
+Because the consumer delays for 10ms and we have 1 consumer only, 
+in 100ms we can expect about 10 events. To process more than 10
+events you can increase the number of consumers.
+    
+
 [PocketData]: https://github.com/iboard/pocketdata
