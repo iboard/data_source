@@ -1,7 +1,7 @@
-# Bucketier License
+# Datasource License
 
 
-**Bucketier** is licensed under [The MIT License](https://opensource.org/licenses/MIT)
+**Datasource** is licensed under [The MIT License](https://opensource.org/licenses/MIT)
 which reads as:
 
 Copyright 2018 Andreas Altendorfer <andreas@altendorfer.at>
