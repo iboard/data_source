@@ -13,7 +13,7 @@ defmodule DataSource.MixProject do
       deps: deps(),
       docs: [
         main: "readme",
-        logo: "assets/bucketier.png",
+        logo: "assets/data_source.png",
         extras: ["README.md", "CHANGELOG.md", "LICENSE.md"]
       ]
     ]
