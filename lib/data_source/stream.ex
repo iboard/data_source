@@ -19,8 +19,8 @@ defmodule Datasource.Stream do
   ### Example:
       
       iex> stream = (1..3) |> Stream.map(&(&1))
-      iex> {:ok, stream_source} = Datasource.start_link(stream, &Datasource.Stream.next/1)
-      iex> (1..5) |> Enum.map( fn(_i) -> Datasource.next(stream_source) end)
+      ...> {:ok, stream_source} = Datasource.start_link(stream, &Datasource.Stream.next/1)
+      ...> (1..5) |> Enum.map( fn(_i) -> Datasource.next(stream_source) end)
       [1, 2, 3, :no_data, :no_data]
 
   """

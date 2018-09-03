@@ -1,6 +1,7 @@
 defmodule Datasource.File do
   @moduledoc """
-  Can be used in `Datasource` as the function-argument. It streams a given file.
+  Can be used in `Datasource` as the function-argument. It streams a given file 
+  line by line.
   """
 
   @doc """
@@ -36,6 +37,10 @@ defmodule Datasource.File do
       ...> assert cnt <= 1000
       true
 
+  When `next` is called for the first time, the filename is passed
+  as a string. In this case `next` will create the `Stream` for this
+  file and calls `next` again, this time with the stream to use and
+  reads the first line. 
   """
   def next(filename) when is_binary(filename), do: next(File.stream!(filename))
   def next(stream) do

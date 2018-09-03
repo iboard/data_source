@@ -27,6 +27,9 @@ defmodule Datasource do
 
   @doc """
   Get the next value of the data source.
+  If the Datasource crash or do not deliver data,
+  literally when it throws an exception, `:no_data`
+  will be returned.
 
   ### Examples:
 

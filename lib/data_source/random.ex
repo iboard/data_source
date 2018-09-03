@@ -12,11 +12,11 @@ defmodule Datasource.Random do
   ### Examples:
       
       iex> {:ok, random_source} = Datasource.start_link(nil, &Datasource.Random.next/1)
-      iex> [a,b,c,d,e] = (1..5) |> Enum.map( fn(_i) -> Datasource.next(random_source) end)
-      iex> assert a != b
-      iex> assert b != c
-      iex> assert c != d
-      iex> assert d != e
+      ...> [a,b,c,d,e] = (1..5) |> Enum.map( fn(_i) -> Datasource.next(random_source) end)
+      ...> assert a != b
+      ...> assert b != c
+      ...> assert c != d
+      ...> assert d != e
       true
       
       

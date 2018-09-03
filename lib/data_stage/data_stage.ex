@@ -14,11 +14,12 @@ defmodule Datasource.DataStage do
     {:producer, source}
   end
 
-
+  @doc """
+  Asks `Datasource.next/1` for the next value (`demand` times)
+  and returns them as events to be dispatched.
+  """
   def handle_demand(demand, source) do
-    events = 
-      (1..demand) |> Enum.map( fn(_i) -> Datasource.next(source) end)
+    events = 1..demand |> Enum.map(fn _i -> Datasource.next(source) end)
     {:noreply, events, source}
   end
 end
-
