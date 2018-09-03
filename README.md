@@ -35,7 +35,7 @@ by adding `data_source` to your list of dependencies in `mix.exs`:
         end
       end
 
-      {:ok, datasource} = Datasource.start_link( 0, fn(state) -> { state, state + 1 } end)
+      {:ok, datasource} = Datasource.start_link(0, fn state -> {state, state + 1} end)
       {:ok, producer} = Datasource.DataStage.start_link(datasource)
       {:ok, consumer} = ConsumerSpy.start_link()
 
