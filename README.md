@@ -2,7 +2,7 @@
 
 Part of the `[PocketData][]` project. A DataSource is a "Producer" (of data)
 for the system. It can be a simple counter, or a complex "collector", reading
-sensors from embeded systems or collecting data from foreign (web-)services.
+sensors from embedded systems or collecting data from foreign (web-)services.
 
 ## Installation
 
@@ -17,7 +17,7 @@ by adding `data_source` to your list of dependencies in `mix.exs`:
 
 ## Example
 
-      # Rememnber consumed events in state
+      # Remember consumed events in state
       defmodule ConsumerSpy do
         use GenStage
 
@@ -45,13 +45,13 @@ by adding `data_source` to your list of dependencies in `mix.exs`:
       ConsumerSpy.call(consumer, :get)
       # => [0,1,2,3,...10]
 
-Because the consumer delays for 10ms and we have 1 consumer only, 
+Because the consumer delays for 10ms and we have 1 consumer only,
 in 100ms we can expect about 10 events. To process more than 10
 events you can increase the number of consumers.
-    
+
 ## Datasources
 
-Some Datasources are defined in `lin/data_source`. Such as
+Some Datasources are defined in `lib/data_source`. Such as
 `Datasource.Counter`, `Datasource.File`, and more.
 
 
