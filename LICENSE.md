@@ -1,8 +1,4 @@
-# Datasource License
-
-
-**Datasource** is licensed under [The MIT License](https://opensource.org/licenses/MIT)
-which reads as:
+# MIT License
 
 Copyright 2018 Andreas Altendorfer <andreas@altendorfer.at>
 
