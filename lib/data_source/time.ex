@@ -9,8 +9,8 @@ defmodule Datasource.Time do
 
   ### Examples:
       
-      iex> {:ok, time_source} = Datasource.start_link(:milliseconds, &Datasource.Time.next/1)
-      ...> now = System.os_time(:milliseconds)
+      iex> {:ok, time_source} = Datasource.start_link(:millisecond, &Datasource.Time.next/1)
+      ...> now = System.os_time(:millisecond)
       ...> subject = Datasource.next(time_source)
       ...> assert_in_delta(now, subject, 1)
       true
