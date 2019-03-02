@@ -1,4 +1,5 @@
 # DataSource
+[![Documentation](https://img.shields.io/badge/docs-hexpm-blue.svg)](http://hexdocs.pm/data_source/)
 
 Part of the `[PocketData][]` project. A DataSource is a "Producer" (of data)
 for the system. It can be a simple counter, or a complex "collector", reading
