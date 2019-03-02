@@ -13,7 +13,7 @@ by adding `data_source` to your list of dependencies in `mix.exs`:
 
       def deps do
         [
-          {:data_source, "~> 0.1.3"}
+          {:data_source, "~> 0.1"}
         ]
       end
 
